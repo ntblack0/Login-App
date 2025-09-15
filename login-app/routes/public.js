@@ -8,3 +8,6 @@ router.post('/cadastro', (req, res) => {
 })
  
 export default router
+
+// valencabalbino_db_user
+// VBSJNb534Wjt9gZf
