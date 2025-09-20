@@ -1,12 +1,15 @@
-import express from 'express'
-import publicRoutes from './routes/public.js'
+import express from "express";
+import publicRouter from "./routes/public.js";
 
-const app = express()
+const app = express();
+const PORT = 3000;
 
-app.use(express.json())
+// Para o Express entender JSON no body
+app.use(express.json());
 
-app.use('/', publicRoutes)
+// Usar as rotas do arquivo public.js
+app.use("/", publicRouter);
 
-app.listen(3000, () => {
-  console.log('Servidor rodando em http://localhost:3000')
-})
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});

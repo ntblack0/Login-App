@@ -29,6 +29,3 @@ router.post('/cadastro', async (req, res) => {
 })
  
 export default router
-
-// valencabalbino_db_user
-// VBSJNb534Wjt9gZf
