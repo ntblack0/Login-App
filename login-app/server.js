@@ -1,14 +1,16 @@
 import express from "express";
 import publicRouter from "./routes/public.js";
+import privateRouter from "./routes/private.js";
+
+import auth from "./middlewares/auth.js";
 
 const app = express();
 const PORT = 3000;
 
-// Para o Express entender JSON no body
 app.use(express.json());
 
-// Usar as rotas do arquivo public.js
-app.use("/", publicRouter);
+app.use("/", publicRouter)
+app.use("/", auth, privateRouter)
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
